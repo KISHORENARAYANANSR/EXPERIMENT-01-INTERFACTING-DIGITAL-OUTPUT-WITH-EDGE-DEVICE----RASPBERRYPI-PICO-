@@ -1,8 +1,8 @@
 # EXPERIMENT-01-INTERFACTING-DIGITAL-OUTPUT-WITH-EDGE-DEVICE---(RASPBERRYPI-PICO)
-### NAME 
-### DEPARTMENT 
-### ROLL NO 
-### DATE OF EXPERIMENT 
+### NAME : **KISHORE NARAYANAN S R**
+### DEPARTMENT : **CSE(IoT)**
+### ROLL NO : 212223110023
+### DATE OF EXPERIMENT : 12/09/2025
 
 ### AIM
 To interface a digital output device (LED) with the Raspberry Pi Pico and control it using MicroPython.
@@ -38,27 +38,90 @@ CIRCUIT DIAGRAM
 Connect the anode (longer leg) of the LED to GP15 via a 330Ω resistor.
 Connect the cathode (shorter leg) of the LED to GND (ground).
 
-
-## PROGRAM (MicroPython)
+## Single LED
+### PROGRAM (MicroPython)
+```python
+from machine import Pin
+import time
+led=Pin(0,Pin.OUT)
+while True:
+    led.value(1)
+    print("LED is ON")
+    time.sleep(1)
+    led.value(0)
+    print("LED is OFF")
+    time.sleep(1)
 ```
 
+### OUPUT  
+<img width="944" height="906" alt="image" src="https://github.com/user-attachments/assets/31be9099-49a1-4562-b5f1-660bcef42108" />
 
- 
-
-
-
- 
-````
+## Three LEDs
+### PROGRAM (MicroPython)
+```python
+from machine import Pin
+import time
+led1=Pin(0,Pin.OUT)
+led2=Pin(1,Pin.OUT)
+led3=Pin(2,Pin.OUT)
+while True:
+    led1.value(1)
+    print("STOP")
+    time.sleep(1)
+    led1.value(0)
+    time.sleep(1)
+    led2.value(1)
+    print("READY")
+    time.sleep(1)
+    led2.value(0)
+    time.sleep(1)
+    led3.value(1)
+    print("GO.....!")
+    time.sleep(1)
+    led3.value(0)
+    time.sleep(1)
+```
 
 ### OUPUT  
+<img width="826" height="756" alt="image" src="https://github.com/user-attachments/assets/ebf92036-fb3d-4730-ba03-fc27d4799ab9" />
 
+## Three LEDs with Buzzer
+### PROGRAM (MicroPython)
+```from machine import Pin
+import time
+led1=Pin(0,Pin.OUT)
+led2=Pin(1,Pin.OUT)
+led3=Pin(2,Pin.OUT)
+buzzer=Pin(19,Pin.OUT)
+while True:
+    led1.value(1)
+    print("LED is ON")
+    time.sleep(1)
+    led1.value(0)
+    print("LED is OFF")
+    time.sleep(1)
+    led2.value(1)
+    print("LED is ON")
+    time.sleep(1)
+    led2.value(0)
+    print("LED is OFF")
+    time.sleep(1)
+    led3.value(1)
+    print("LED is ON")
+    time.sleep(1)
+    led3.value(0)
+    print("LED is OFF")
+    time.sleep(1)
+    buzzer.value(1)
+    print("LED is ON")
+    time.sleep(1)
+    buzzer.value(0)
+    print("LED is OFF")
+    time.sleep(1)
+```
 
-# FIGURE -02 ADD TITILE HERE 
-
-#  FIGURE -03 ADD TITILE HERE 
-
-# FIGURE -04 ADD TITLE HERE 
-
+### OUPUT  
+<img width="952" height="906" alt="image" src="https://github.com/user-attachments/assets/820c433a-30c4-4387-9853-b82801c99893" />
 
  
 ## RESULTS
